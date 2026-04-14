@@ -1,0 +1,36 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  
+  @keyframes shimmer {
+    0% { transform: translateX(-150%) skewX(-15deg); }
+    100% { transform: translateX(350%) skewX(-15deg); }
+  }
+  --animate-shimmer: shimmer 4s infinite linear;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  min-width: 0;
+}
+
+img,
+svg,
+video,
+canvas,
+iframe {
+  display: block;
+  max-width: 100%;
+}
+
+body {
+  @apply bg-white text-black font-sans antialiased;
+  overflow-x: hidden;
+}
